@@ -1,0 +1,19 @@
+.portfolioWrapper {
+    background-color: #e076ef;
+}
+
+.projectContainer {
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.title {
+    background-color: aliceblue;
+}
+
+.projects {
+    border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

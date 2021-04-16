@@ -1,0 +1,19 @@
+.mainBlock {
+    height: 100vh;
+    background-color: #ffc6ce;
+}
+
+.mainContainer {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text {
+    width: 350px;
+    background-color: grey;
+}
+.mainPhoto {
+    width: 300px;
+    height: 400px;
+    background-color: grey;
+}
