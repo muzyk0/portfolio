@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './Skills.module.css'
-import styleContainer from '../common/Styles/Container.module.css'
 import {Skill} from './Skill/Skill';
+import styled from 'styled-components';
+import {StyleContainer} from '../common/Styles/Container';
 
 export type SkillsType = {
     id: number
@@ -9,6 +9,23 @@ export type SkillsType = {
     title: string
     description: string
 }
+
+export const SkillsBlock = styled.div`
+  background-color: #bcf5b4;
+`
+export const SkillsWrapper = styled(StyleContainer)`
+  flex-direction: column;
+  justify-content: flex-start;
+`
+export const Title = styled.h2`
+  background-color: aliceblue;
+`
+export const SkillsStyle = styled.div`
+  border: 1px solid;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+`
 
 export const Skills = () => {
 
@@ -40,10 +57,10 @@ export const Skills = () => {
     ]
 
     return (
-        <div className={styles.skillsBlock}>
-            <div className={`${styleContainer.container} ${styles.skillsContainer}`}>
-                <h2 className={styles.title}>Skills</h2>
-                <div className={styles.skills}>
+        <SkillsBlock>
+            <SkillsWrapper>
+                <Title>Skills</Title>
+                <SkillsStyle>
                     {skills.map(skill => <Skill
                             key={skill.id}
                             id={skill.id}
@@ -52,8 +69,8 @@ export const Skills = () => {
                             icon={skill.icon}
                         />
                     )}
-                </div>
-            </div>
-        </div>
+                </SkillsStyle>
+            </SkillsWrapper>
+        </SkillsBlock>
     );
 };

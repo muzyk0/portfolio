@@ -1,7 +1,24 @@
 import React from 'react';
-import styles from './Portfolio.module.css'
-import styleContainer from '../common/Styles/Container.module.css'
 import {Project} from './Skill/Project';
+import {StyleContainer} from '../common/Styles/Container';
+import styled from 'styled-components';
+
+const PortfolioBlock = styled.div`
+  background-color: #e076ef;
+`
+const PortfolioWrapper = styled(StyleContainer)`
+  flex-direction: column;
+  justify-content: flex-start;
+`
+const Title = styled.h2`
+  justify-content: flex-start;
+`
+const Projects = styled.div`
+  border: 1px solid;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+`
 
 export type ProjectType = {
     id: number
@@ -40,10 +57,10 @@ export const Portfolio = () => {
     ]
 
     return (
-        <div className={styles.portfolioWrapper}>
-            <div className={`${styleContainer.container} ${styles.projectContainer}`}>
-                <h2 className={styles.title}>Projects</h2>
-                <div className={styles.projects}>
+        <PortfolioBlock>
+            <PortfolioWrapper>
+                <Title>Projects</Title>
+                <Projects>
                     {projects.map(p => <Project
                         key={p.id}
                         id={p.id}
@@ -52,8 +69,8 @@ export const Portfolio = () => {
                         description={p.description}
                         />
                     )}
-                </div>
-            </div>
-        </div>
+                </Projects>
+            </PortfolioWrapper>
+        </PortfolioBlock>
     );
 };
