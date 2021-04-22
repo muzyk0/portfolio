@@ -21,6 +21,7 @@ export const Title = styled.h2`
   background-color: aliceblue;
 `
 export const SkillsStyle = styled.div`
+  width: 100%;
   border: 1px solid;
   display: flex;
   justify-content: space-between;
