@@ -76,7 +76,7 @@ export const Portfolio = () => {
 
 
             <PortfolioWrapper>
-                <h1>Стоить оставлять код ниже или пока убрать?</h1>
+                <Title>Projects v2</Title>
                     <ul className="stage">
 
                         <li className="scene">
