@@ -2,6 +2,7 @@ import React from 'react';
 import {Skill} from './Skill/Skill';
 import styled from 'styled-components';
 import {StyleContainer} from '../common/Styles/Container';
+import Title from '../common/Components/Title/Portfolio';
 
 export type SkillsType = {
     id: number
@@ -16,9 +17,6 @@ export const SkillsBlock = styled.div`
 export const SkillsWrapper = styled(StyleContainer)`
   flex-direction: column;
   justify-content: flex-start;
-`
-export const Title = styled.h2`
-  background-color: aliceblue;
 `
 export const SkillsStyle = styled.div`
   width: 100%;
@@ -60,7 +58,7 @@ export const Skills = () => {
     return (
         <SkillsBlock>
             <SkillsWrapper>
-                <Title>Skills</Title>
+                <Title subTitle={'My'} title={'Skills'}/>
                 <SkillsStyle>
                     {skills.map(skill => <Skill
                             key={skill.id}

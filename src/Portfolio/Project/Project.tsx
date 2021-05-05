@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import logoProject from '../../logo.svg'
 
 const ProjectStyle = styled.div`
-  width: 250px;
+  width: 450px;
   background-color: aliceblue;
   display: flex;
   flex-wrap: wrap;
@@ -13,7 +13,7 @@ const ProjectStyle = styled.div`
   align-items: center;
   text-align: center;
   margin: 5px;
-  padding: 10px;
+
 `
 const ImgWrapper = styled.div`
   width: 200px;
@@ -24,6 +24,14 @@ const ImgWrapper = styled.div`
   justify-content: center;
   align-items: center;
 `
+const Title = styled.h3`
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin: 0 0 5px;
+`
+const Description = styled.div`
+
+`
 
 
 export const Project: React.FC<ProjectType> = (props) => {
@@ -32,8 +40,8 @@ export const Project: React.FC<ProjectType> = (props) => {
             <ImgWrapper>
                 <Link href={'#'}>View</Link>
             </ImgWrapper>
-            <h3>{props.title}</h3>
-            <span>{props.description}</span>
+            <Title>{props.title}</Title>
+            <Description>{props.description}</Description>
         </ProjectStyle>
     );
 };

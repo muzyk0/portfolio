@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from '../common/Button/Link';
+import {Link, LinkStyle} from '../common/Button/Link';
 import styled from 'styled-components';
 import {StyleContainer} from '../common/Styles/Container';
 
@@ -11,7 +11,20 @@ const ContactWrapper = styled(StyleContainer)`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 20px 10px;
+  padding: 30px 10px;
+`
+const Button = styled.button`
+  text-decoration: none;
+  display: inline-block;
+  background-color: #fcd65d;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  &:hover {
+    background-color: #ffc700;
+  }
 `
 const Title = styled.h2`
   background-color: aliceblue;
@@ -20,8 +33,16 @@ const Form = styled.form`
   border: 1px solid;
   display: flex;
   flex-direction: column;
-  width: 250px;
+  align-items: center;
+  width: 50%;
   padding-bottom: 20px;
+`
+
+const Input = styled.input`
+  width: 100%;
+`
+const Textarea = styled(Input)`
+  width: 100%;
 `
 
 export const Contacts = () => {
@@ -31,16 +52,16 @@ export const Contacts = () => {
                 <Title>Contacts</Title>
                 <Form>
                     <label>email</label>
-                    <input type="text"/>
+                    <Input type="text"/>
 
                     <label>email</label>
-                    <input type="text"/>
+                    <Input type="text"/>
 
                     <label>Your message</label>
-                    <textarea/>
+                    <Textarea/>
 
                 </Form>
-                <Link href={'#'}>Submit</Link>
+                <Button type={'submit'}>Submit</Button>
             </ContactWrapper>
         </ContactsStyled>
     )

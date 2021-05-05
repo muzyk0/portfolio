@@ -6,7 +6,7 @@ type PropsType = {
     className?: string
 }
 
-const LinkStyle = styled.a`
+export const LinkStyle = styled.a`
   text-decoration: none;
   display: inline-block;
   background-color: #fcd65d;
