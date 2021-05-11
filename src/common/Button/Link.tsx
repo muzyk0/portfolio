@@ -13,15 +13,12 @@ export const LinkStyle = styled.a`
   color: #000;
   padding: 10px 20px;
   border-radius: 2px;
+
   &:hover {
     background-color: #ffc700;
   }
 `
 
 export const Link: React.FC<PropsType> = (props) => {
-    return (
-        <>
-            <LinkStyle href={props.href}>{props.children}</LinkStyle>
-        </>
-    );
+    return <LinkStyle {...props}>{props.children}</LinkStyle>
 };

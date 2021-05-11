@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 interface StyledPropsType {
+    direction?: string
     justify?: string
     align?: string
 }
@@ -13,6 +14,7 @@ export const StyleContainer = styled.div<StyledPropsType>`
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: ${props => props.justify ? props.direction : 'row'};
   justify-content: ${props => props.justify ? props.justify : 'space-between'};
   align-items: ${props => props.align ? props.align : 'center'};;
 `

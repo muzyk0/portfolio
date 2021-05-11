@@ -1,6 +1,5 @@
 import React from 'react';
-import {ProjectType} from '../Portfolio';
-import {Link} from '../../common/Button/Link';
+import {Link, LinkStyle} from '../../common/Button/Link';
 import styled from 'styled-components';
 import logoProject from '../../logo.svg'
 
@@ -13,7 +12,6 @@ const ProjectStyle = styled.div`
   align-items: center;
   text-align: center;
   margin: 5px;
-
 `
 const ImgWrapper = styled.div`
   width: 200px;
@@ -23,6 +21,17 @@ const ImgWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  &:before {
+    position: absolute;
+    content: '';
+    background-color: black;
+    opacity: 0.4;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
 `
 const Title = styled.h3`
   font-size: 16px;
@@ -32,12 +41,25 @@ const Title = styled.h3`
 const Description = styled.div`
 
 `
+const LinkBtn = styled(LinkStyle)`
+  position: relative;
+  z-index: 10;
+`
+type PropsType = {
+    id: number
+    image: {
+        color: string
+        backgroundImage: string
+    }
+    title: string
+    description: string
+}
 
+export const Project: React.FC<PropsType> = (props) => {
 
-export const Project: React.FC<ProjectType> = (props) => {
     return (
         <ProjectStyle>
-            <ImgWrapper>
+            <ImgWrapper >
                 <Link href={'#'}>View</Link>
             </ImgWrapper>
             <Title>{props.title}</Title>

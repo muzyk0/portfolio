@@ -1,21 +1,52 @@
 import React from 'react';
 import styles from './Nav.module.css'
 import styled from 'styled-components';
+import {Link} from '../common/Link/Link';
+import {StyleContainer} from '../common/Styles/Container';
 
 const NavStyled = styled.nav`
   border: 1px solid black;
-  width: 300px;
   display: flex;
-  justify-content: space-between;
-`
+  justify-content: center;
+`;
+const NavLink = styled(Link)`
+  color: rgba(250, 250, 250, 0.9);
+  height: 70px;
+  padding: 0px 0.85em;
+  
+`;
+const List = styled(Link)`
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+`;
 
 export const Nav: React.FC = () => {
     return (
         <NavStyled>
-            <a href="/">Home</a>
-            <a href="/">Skills</a>
-            <a href="/">Projects</a>
-            <a href="/">Contacts</a>
+
+            <List>
+                <li>
+                    <NavLink href="/">Home</NavLink>
+                </li>
+                <li>
+                    <NavLink href="/">About</NavLink>
+                </li>
+                <li>
+                    <NavLink href="/">What I Do</NavLink>
+                </li>
+                <li>
+                    <NavLink href="/">Resume</NavLink>
+                </li>
+                <li>
+                    <NavLink href="/">Portfolio</NavLink>
+                </li>
+                <li>
+                    <NavLink href="/">Contact</NavLink>
+                </li>
+
+            </List>
         </NavStyled>
     )
 }

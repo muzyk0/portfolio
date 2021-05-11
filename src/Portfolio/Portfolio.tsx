@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {StyleContainer} from '../common/Styles/Container';
-import styled from 'styled-components';
+import styled, {ThemeContext} from 'styled-components';
 import {Project} from './Project/Project';
-import Title from '../common/Components/Title/Portfolio';
+import todoImage from '../assets/images/TodoList.png';
+import xCmsImage from '../assets/images/MiniX_CMS.png';
+import TitleOld from '../common/Components/Title/TitleOld';
 
 const PortfolioBlock = styled.div`
   padding: 120px 50px;
@@ -25,44 +27,55 @@ const Projects = styled.div`
 
 export type ProjectType = {
     id: number
-    image: string
+    image: {
+        color: string
+        backgroundImage: string
+    }
     title: string
     description: string
 }
 
 export const Portfolio = () => {
 
+    const todolist = {
+        color: 'blue',
+        backgroundImage: `url(${todoImage})`,
+    };
+    const xcms = {
+        color: 'blue',
+        backgroundImage: `url(${xCmsImage})`,
+    };
+
     const projects: ProjectType[] = [
         {
             id: 1,
-            image: '',
+            image: todolist,
             title: 'React Social Network',
-            description: 'consectetur adipisicing elit. Architecto, possimus!'
+            description: 'consectetur adipisicing elit. Architecto, possimus!',
         },
         {
             id: 2,
-            image: '',
+            image: xcms,
             title: 'TodoList',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, possimus!'
         },
         {
             id: 3,
-            image: '',
+            image: todolist,
             title: 'X-CMS',
             description: 'consectetur '
         },
         {
             id: 4,
-            image: '',
+            image: todolist,
             title: 'Market',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, possimus!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, possimus!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, possimus!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, possimus!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, possimus!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, possimus!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, possimus!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, possimus!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, possimus!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, possimus!'
         },
     ]
-
     return (
         <PortfolioBlock>
             <PortfolioWrapper>
-                <Title title={'Project'} subTitle={'Web'} description={'All Ready Pre-Built Projects'}/>
+                <TitleOld title={'Project'} subTitle={'Web'} description={'All Ready Pre-Built Projects'}/>
                 <Projects>
                     {projects.map(p => <Project
                             key={p.id}

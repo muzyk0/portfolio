@@ -4,7 +4,7 @@ import {StyleContainer} from '../common/Styles/Container';
 
 const MainBlock = styled.div`
   height: 100vh;
-  background-color: #ffc6ce;
+  background-color: #343a40;
 `
 const DescriptionText = styled.div`
   width: 350px;
@@ -22,7 +22,7 @@ export const Main = () => {
         <MainBlock>
             <StyleContainer justify={'space-between'} align={'center'}>
                 <DescriptionText>
-                    <span>Hi there</span>
+                    <span>Hi There</span>
                     <h1>I am Vladislav Muzyka</h1>
                     <p>A Frontend Developer</p>
                 </DescriptionText>

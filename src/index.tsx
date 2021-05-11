@@ -1,25 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {App} from './App';
 import reportWebVitals from './reportWebVitals';
-import {createGlobalStyle} from 'styled-components';
+import {createGlobalStyle, ThemeProvider} from 'styled-components';
+import App from './App';
+import {defaultTheme} from './common/Styles/Styled-component/theme';
 
 const Global = createGlobalStyle`
   * {
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Open Sans', 'Segoe UI', 'Roboto', 'Oxygen',
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, 'Open Sans', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     margin: 0;
-    background: #fff;
+    
   }
 
   body {
     color: #585858;
-    font-family: 'Open Sans', sans-serif;
-    line-height: 24px;
+    font-family: "Poppins", sans-serif;
     font-size: 1rem;
     font-weight: 400;
+    line-height: 1.5;
+    background: #212529;
   }
 
   code {
@@ -27,12 +29,11 @@ const Global = createGlobalStyle`
     monospace;
   }
 `
-
 ReactDOM.render(
-    <>
+    <ThemeProvider theme={defaultTheme}>
         <Global/>
         <App/>
-    </>,
+    </ThemeProvider>,
     document.getElementById('root')
 );
 

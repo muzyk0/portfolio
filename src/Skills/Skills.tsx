@@ -2,7 +2,7 @@ import React from 'react';
 import {Skill} from './Skill/Skill';
 import styled from 'styled-components';
 import {StyleContainer} from '../common/Styles/Container';
-import Title from '../common/Components/Title/Portfolio';
+import TitleOld from '../common/Components/Title/TitleOld';
 
 export type SkillsType = {
     id: number
@@ -58,7 +58,7 @@ export const Skills = () => {
     return (
         <SkillsBlock>
             <SkillsWrapper>
-                <Title subTitle={'My'} title={'Skills'}/>
+                <TitleOld subTitle={'My'} title={'Skills'}/>
                 <SkillsStyle>
                     {skills.map(skill => <Skill
                             key={skill.id}

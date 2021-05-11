@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import React from 'react';
 
 const TitleWrapper = styled.div`
   display: flex;
@@ -39,19 +40,18 @@ type Props = {
     description?: string
 }
 
-const Title: React.FC<Props> = props => {
+const TitleOld: React.FC<Props> = props => {
     const {title, subTitle, description} = props
 
     return (
 
         <TitleWrapper>
             <TitleStyled>
-                <TitleSpan>{subTitle}</TitleSpan>
                 {title}
+                <SubTitle>{description}</SubTitle>
             </TitleStyled>
-            {description && <SubTitle>{description}</SubTitle>}
         </TitleWrapper>
 
     );
 };
-export default Title
+export default TitleOld
