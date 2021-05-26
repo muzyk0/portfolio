@@ -7,8 +7,7 @@ interface StyledPropsType {
 }
 
 export const StyleContainer = styled.div<StyledPropsType>`
-  border: 1px solid black;
-  height: 100%;
+  
   width: 80%;
   max-width: 1200px;
   margin: 0 auto;
@@ -16,5 +15,9 @@ export const StyleContainer = styled.div<StyledPropsType>`
   flex-wrap: wrap;
   flex-direction: ${props => props.justify ? props.direction : 'row'};
   justify-content: ${props => props.justify ? props.justify : 'space-between'};
-  align-items: ${props => props.align ? props.align : 'center'};;
+  align-items: ${props => props.align ? props.align : 'center'};
+  @media (min-width: 1200px) {
+      max-width: 1170px !important;
+    }
+  }
 `

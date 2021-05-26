@@ -1,10 +1,10 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {StyleContainer} from '../common/Styles/Container';
-import styled, {ThemeContext} from 'styled-components';
+import styled from 'styled-components';
 import {Project} from './Project/Project';
 import todoImage from '../assets/images/TodoList.png';
 import xCmsImage from '../assets/images/MiniX_CMS.png';
-import TitleOld from '../common/Components/Title/TitleOld';
+import Title from '../common/Components/Title/Title';
 
 const PortfolioBlock = styled.div`
   padding: 120px 50px;
@@ -75,7 +75,7 @@ export const Portfolio = () => {
     return (
         <PortfolioBlock>
             <PortfolioWrapper>
-                <TitleOld title={'Project'} subTitle={'Web'} description={'All Ready Pre-Built Projects'}/>
+                <Title title={'Portfolio'} subTitle={'My work'} />
                 <Projects>
                     {projects.map(p => <Project
                             key={p.id}

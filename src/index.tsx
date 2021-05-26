@@ -12,16 +12,30 @@ const Global = createGlobalStyle`
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     margin: 0;
-    
-  }
 
+  }
   body {
-    color: #585858;
+    color: #fff;
     font-family: "Poppins", sans-serif;
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
     background: #212529;
+  }
+  p {
+    line-height: 1.8;
+  }
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  section {
+    padding: 4.5rem 0;
+    @media (max-width: 767.98px) {
+      padding: 3.5rem 0;
+    }
+    
   }
 
   code {

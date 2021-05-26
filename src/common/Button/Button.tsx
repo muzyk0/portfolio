@@ -22,27 +22,29 @@ export const Button = styled.button<IProps>`
   ${props => {
     switch (props.variant) {
       case VARIANT.SECONDARY: {
-        const {main, contrastText, hover} = props.theme.palette.secondary
+        const {main, contrastText, hover, border} = props.theme.palette.secondary
         return css`
           color: ${contrastText};
           background-color: ${main};
-          border-color: ${main};
+          border-color: ${border};
           &:hover {
+            color: ${hover.contrastText};
             background-color: ${hover.main};
-            border-color: ${hover.main};
+            border-color: ${hover.border};
           }
         `;
       }
       case VARIANT.PRIMARY:
       default: {
-        const {main, contrastText, hover} = props.theme.palette.primary
+        const {main, contrastText, hover, border} = props.theme.palette.primary
         return css`
           color: ${contrastText};
           background-color: ${main};
-          border-color: ${main};
+          border-color: ${border};
           &:hover {
+            color: ${hover.contrastText};
             background-color: ${hover.main};
-            border-color: ${hover.main};
+            border-color: ${hover.border};
           }
         `;
       }

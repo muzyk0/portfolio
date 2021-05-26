@@ -4,9 +4,9 @@ import {StyleContainer} from '../common/Styles/Container';
 import Title from '../common/Components/Title/Title';
 import {Button} from '../common/Button/Button';
 import {Link} from '../common/Link/Link';
+import ExperienceItemBox from './ExperienceItemBox';
 
 const AboutMeSection = styled.section`
-  padding: 4.5rem 0;
   overflow: hidden;
 `;
 const AboutMeWrapper = styled(StyleContainer)`
@@ -14,16 +14,28 @@ const AboutMeWrapper = styled(StyleContainer)`
   justify-content: flex-start;
 `;
 const Profile = styled.div`
-  width: 100%;
-  border: 1px solid;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row; 
+  justify-content: flex-start;
   flex-wrap: wrap;
+  align-items: flex-start;
 `;
 const AboutMeDescription = styled.div`
+  flex: 2 1 600px;
   display: flex;
   flex-direction: column;
   text-align: center;
+`;
+const AboutMeProfile = styled.div`
+  flex: 1 1 200px;
+  color: rgba(255, 255, 255, .5);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  padding-right: 15px;
+  padding-left: 15px;
+  @media screen and (max-width: 868px) {
+    margin-top: 3rem;
+  }
 `;
 const SubTitle = styled.div`
   font-size: 1.75rem;
@@ -38,15 +50,6 @@ const Paragraph = styled.span`
   color: rgba(255, 255, 255, .5);
   line-height: 1.8;
   margin-bottom: 1rem;
-`;
-const AboutMeProfile = styled.div`
-  color: rgba(255, 255, 255, .5);
-  line-height: 1.8;
-  width: 100%;
-  margin-bottom: 1rem;
-  margin-top: 3rem;
-  padding-right: 15px;
-  padding-left: 15px;
 `;
 const AboutMeCV = styled.div`
   padding-left: 1.5rem
@@ -72,6 +75,17 @@ const ListElementSpan = styled.span`
   margin-right: .5rem;
 `;
 
+const SocialNetwork = styled.div`
+  flex: 0 1 100%;
+  margin-top: 3rem;
+  overflow: hidden;
+`
+const Experience = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
+
+
 const AboutMe = () => {
 
     return (
@@ -82,21 +96,23 @@ const AboutMe = () => {
                 <Profile>
                     <AboutMeDescription>
                         <SubTitle>
-                            I'm <SubTitleSpan className="text-primary">Vladislav Muzyka, </SubTitleSpan>
+                            I'm <SubTitleSpan>Vladislav Muzyka, </SubTitleSpan>
                             a Front-End Developer
                         </SubTitle>
-                        <Paragraph className="text-white-50">
-                            I help you build brand for your business at an affordable price.
-                            Thousands of clients have procured exceptional results while working with our dedicated
-                            team. when an unknown printer took a galley of type and scrambled it to make a type specimen
-                            book.
+                        <Paragraph>
+                            I have experience with React,
+                            Redux, TypeScript as the main
+                            stack, and I want to develop in this
+                            direction.
+                            Now I am improving my skills in
+                            this direction and expanding them
+                            with new technologies.
                         </Paragraph>
-                        <Paragraph className="text-white-50">
-                            Delivering work within time and budget which meets client’s
-                            requirements is our moto. Lisque persius interesset his et, in quot quidam persequeris vim,
-                            ad mea essent possim iriure. Lorem Ipsum has been the industry's standard dummy text ever
-                            when an unknown printer took a galley. Lisque persius interesset in quot quidam possim
-                            iriure.
+                        <Paragraph>
+                            I'm planning to study Node.js,
+                            because my next focus is to
+                            become a Full-Stack Developer.
+                            And also I have interest to design.
                         </Paragraph>
                     </AboutMeDescription>
                     <AboutMeProfile>
@@ -116,9 +132,17 @@ const AboutMe = () => {
                                     <ListElementSpan>From:</ListElementSpan>Russia, Cheboksary
                                 </ListElement>
                             </List>
-                            <Button as="a" href="#" className="btn btn-primary rounded-pill">Download CV</Button>
+                            <Button as="a" href="#">Download CV</Button>
                         </AboutMeCV>
                     </AboutMeProfile>
+                    <SocialNetwork>
+                        <Experience>
+                            <ExperienceItemBox />
+                            <ExperienceItemBox />
+                            <ExperienceItemBox />
+                            <ExperienceItemBox />
+                        </Experience>
+                    </SocialNetwork>
                 </Profile>
 
             </AboutMeWrapper>

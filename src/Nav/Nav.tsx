@@ -1,8 +1,6 @@
 import React from 'react';
-import styles from './Nav.module.css'
 import styled from 'styled-components';
 import {Link} from '../common/Link/Link';
-import {StyleContainer} from '../common/Styles/Container';
 
 const NavStyled = styled.nav`
   border: 1px solid black;
@@ -12,7 +10,7 @@ const NavStyled = styled.nav`
 const NavLink = styled(Link)`
   color: rgba(250, 250, 250, 0.9);
   height: 70px;
-  padding: 0px 0.85em;
+  padding: 0 0.85em;
   
 `;
 const List = styled(Link)`

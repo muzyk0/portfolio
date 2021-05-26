@@ -1,9 +1,11 @@
 import 'styled-components';
 interface IPalette {
     main: string
+    border: string
     contrastText: string
     hover: {
         main: string
+        border: string
         contrastText: string
     }
 }
