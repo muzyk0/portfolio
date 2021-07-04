@@ -6,6 +6,8 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faTelegram} from '@fortawesome/free-brands-svg-icons';
 import {faMailBulk} from '@fortawesome/free-solid-svg-icons';
 import {Button} from '../common/Button/Button';
+import {useFormik} from 'formik';
+import {api, FormData} from '../dal/Api';
 
 
 const Section = styled.section`
@@ -62,6 +64,7 @@ const ListElement = styled.li`
 `;
 const Form = styled.form`
   color: #4c4d4d;
+
   p {
     text-align: center;
   }
@@ -115,7 +118,7 @@ const Input = styled.input`
     -webkit-text-fill-color: #fff;
     -webkit-box-shadow: 0 0 0 1000px #232a31 inset;
     transition: background-color 5000s ease-in-out 0s;
-    background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,174,255,0.04) 50%,rgba(255,255,255,0) 51%,rgba(0,174,255,0.03) 100%);
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 174, 255, 0.04) 50%, rgba(255, 255, 255, 0) 51%, rgba(0, 174, 255, 0.03) 100%);
   }
 
 `;
@@ -129,6 +132,17 @@ const Contacts = () => {
         fontSize: '20px',
         color: '#20c997'
     }
+
+    const formik = useFormik({
+        initialValues: {
+            name: '',
+            email: '',
+            message: ''
+        } as FormData,
+        onSubmit: async values => {
+            await api.sendMessage(values)
+        },
+    })
 
     return (
         <Section>
@@ -158,24 +172,40 @@ const Contacts = () => {
                             send me
                         </SubTitle>
 
-                        <Form id="contact-form" action="">
+                        <Form id="contact-form" onSubmit={formik.handleSubmit}>
                             <InputBlock>
                                 <InputWrapper>
                                     <InputInner>
-                                        <Input name="name" type="text" placeholder="Name"/>
+                                        <Input
+                                            type="text"
+                                            placeholder="Name"
+                                            {...formik.getFieldProps('name')}
+                                        />
                                     </InputInner>
                                 </InputWrapper>
                                 <InputWrapper>
                                     <InputInner>
-                                            <Input name="email" type="email" placeholder="Email"/>
+                                        <Input
+                                            type="email"
+                                            placeholder="Email"
+                                            {...formik.getFieldProps('email')}
+                                        />
                                     </InputInner>
                                 </InputWrapper>
                             </InputBlock>
                             <TextareaWrapper>
-                                    <Input as={'textarea'} name="form-message" rows={5} placeholder="Tell us more about your needs........"/>
+                                <Input as={'textarea'}
+                                       rows={5}
+                                       placeholder="Tell us more about your needs........"
+                                       {...formik.getFieldProps('message')}
+                                />
                             </TextareaWrapper>
                             <p className="text-center mt-4 mb-0">
-                                <Button id="submit-btn" type="submit">Send Message
+                                <Button
+                                    id="submit-btn"
+                                    type="submit"
+                                >
+                                    Send Message
                                 </Button>
                             </p>
                         </Form>

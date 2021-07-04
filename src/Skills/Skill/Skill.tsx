@@ -5,8 +5,7 @@ import styled from 'styled-components';
 const SkillWrapper = styled.div`
   position: relative;
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding: 0 15px;
   @media (min-width: 768px) {
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
@@ -60,7 +59,7 @@ export const Skill: React.FC<Props> = (props) => {
                     <Icon icon={props.icon}/>
                 </StyledIcon>
                 <h3>{props.title}</h3>
-                <span>{props.description}</span>
+                <div>{props.description}</div>
             </SkillStyle>
         </SkillWrapper>
     );

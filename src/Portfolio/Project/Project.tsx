@@ -1,23 +1,31 @@
 import React from 'react';
-import {Link, LinkStyle} from '../../common/Button/Link';
+import {Link} from '../../common/Button/Link';
 import styled from 'styled-components';
-import logoProject from '../../logo.svg'
 
-const ProjectStyle = styled.div`
-  width: 450px;
-  background-color: aliceblue;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin: 5px;
+const ProjectWrapper = styled.div`
+  position: relative;
+  width: 100%;
+
+  background-color: #111418;
+  border-radius: .25rem;
+  color: #dee3e4;
+  margin: 1rem;
+  
+  @media (min-width: 949px) {
+    -ms-flex: 0 0 45%;
+    flex: 0 0 45%;
+    max-width: 45%;
+  }
 `
-const ImgWrapper = styled.div`
-  width: 200px;
-  height: 200px;
-  background: #88f87b url(${logoProject}) center no-repeat;
+
+interface IPropsIcon {
+    backgroundImage: string
+}
+const ImgWrapper = styled.div<IPropsIcon>`
+  height: 300px;
+  background: #88f87b url("${props => props.backgroundImage}") no-repeat center;
   background-size: cover;
+  border-radius: .25rem .25rem 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,22 +41,14 @@ const ImgWrapper = styled.div`
     left: 0;
   }
 `
-const Title = styled.h3`
-  font-size: 16px;
-  letter-spacing: 1px;
-  margin: 0 0 5px;
-`
-const Description = styled.div`
 
+const Description = styled.div`
+  padding: 1.5rem 1rem 1rem;
 `
-const LinkBtn = styled(LinkStyle)`
-  position: relative;
-  z-index: 10;
-`
+
 type PropsType = {
     id: number
     image: {
-        color: string
         backgroundImage: string
     }
     title: string
@@ -58,13 +58,16 @@ type PropsType = {
 export const Project: React.FC<PropsType> = (props) => {
 
     return (
-        <ProjectStyle>
-            <ImgWrapper >
+        <ProjectWrapper>
+            <ImgWrapper backgroundImage={props.image.backgroundImage}>
                 <Link href={'#'}>View</Link>
             </ImgWrapper>
-            <Title>{props.title}</Title>
-            <Description>{props.description}</Description>
-        </ProjectStyle>
+
+            <Description>
+                <h3>{props.title}</h3>
+                <p>{props.description}</p>
+            </Description>
+        </ProjectWrapper>
     );
 };
 

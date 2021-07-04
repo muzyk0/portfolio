@@ -16,19 +16,18 @@ const PortfolioWrapper = styled(StyleContainer)`
 `
 const Projects = styled.div`
   width: 100%;
-  border: 1px solid;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   flex-wrap: wrap;
-  @media screen and (max-width: 1257px) {
-    justify-content: center;
-  }
+  //@media screen and (max-width: 1258px) {
+  //  justify-content: center;
+  //}
 `
 
 export type ProjectType = {
     id: number
     image: {
-        color: string
         backgroundImage: string
     }
     title: string
@@ -38,12 +37,10 @@ export type ProjectType = {
 export const Portfolio = () => {
 
     const todolist = {
-        color: 'blue',
-        backgroundImage: `url(${todoImage})`,
+        backgroundImage: todoImage,
     };
     const xcms = {
-        color: 'blue',
-        backgroundImage: `url(${xCmsImage})`,
+        backgroundImage: xCmsImage,
     };
 
     const projects: ProjectType[] = [
@@ -69,7 +66,7 @@ export const Portfolio = () => {
             id: 4,
             image: todolist,
             title: 'Market',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, possimus!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, possimus!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, possimus!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, possimus!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, possimus!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, possimus!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, possimus!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, possimus!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, possimus!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, possimus!'
+            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, possimus!Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
         },
     ]
     return (
